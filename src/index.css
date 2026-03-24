@@ -1,0 +1,35 @@
+@import url('bootstrap');
+
+*{
+    background-color: steelblue;
+}
+main{
+    min-height: 90vh;
+}
+.card{
+    border: solid black 2px;
+}
+
+#singleProduct{
+    height: 10rem;
+    background-color: red;
+}
+
+.footerBar{
+    height: 80px;
+    background-image: url(./assets/modern-minimalist-dark-blue-premium-abstract-background-with-luxury-geometric-dark-shape-exclusive-wallpaper-design-for-website-poster-brochure-presentation-free-vector.jpg);
+    display: flex;
+    
+}
+    
+.headerBar{
+    height: 60px;
+    background-image: url(./assets/modern-minimalist-dark-blue-premium-abstract-background-with-luxury-geometric-dark-shape-exclusive-wallpaper-design-for-website-poster-brochure-presentation-free-vector.jpg);
+}
+
+#descr{
+    font-size: 12px;
+}
+
+
+
