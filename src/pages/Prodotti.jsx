@@ -8,23 +8,33 @@ export default function Prodotti(){
 const api_link ="https://fakestoreapi.com/products"
 const [products,setProducts]=useState([])
 const {budgetMode,setBudgetMode}=useContext(BudgetContext)
+const [filter,setFilter]=useState([])
+
+
 
 function getProducts(){
 fetch(api_link)
 .then(res=>res.json())
-.then(data=>{setProducts(data)
+.then(data=>{setProducts(data), setFilter(data)
 
 })
 }
 useEffect(getProducts,[]) 
 
 function setFunctionMode(){
-    if (budgetMode== false) setBudgetMode(true)
+    setBudgetMode(!budgetMode)
+    console.log(budgetMode);
+    
+    if (budgetMode== false){
+        const filtered=products.filter(item=>item.price<=30)
+        setFilter(filtered)
+    }
         else{
-    setBudgetMode(false)
+    setFilter(products)
         }
 }
 console.log(budgetMode);
+
 
 
 return(
@@ -38,7 +48,7 @@ return(
         <main>
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-4">
-                    {products.map(product=>(
+                    {filter.map(product=>(
                         <div key={product.id}>
                             <div className="col justify-content-center d-flex h-100 w-100 align-self-stretch">
                                 <div  className="card p-3 bg-light mb-4">
