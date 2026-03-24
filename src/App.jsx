@@ -4,13 +4,16 @@ import ChiSiamo from "./pages/ChiSiamo"
 import Prodotti from "./pages/Prodotti"
 import ProdottoSingolo from "./pages/ProdottoSingolo"
 import BudgetContext from "./pages/BudgetContext/BudgetContext"
+import { useEffect,useContext,useState } from "react"
 
 
 function App() {
  
+const [budgetMode,setBudgetMode]=useState(false);
+
   return (
     <>
-    <BudgetContext>
+    <BudgetContext.Provider value={{budgetMode,setBudgetMode}}>
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Homepage/>}/>
@@ -19,7 +22,7 @@ function App() {
             <Route path="/prodotti/:id" element={<ProdottoSingolo/>}/>
         </Routes>
       </BrowserRouter>
-      </BudgetContext>
+      </BudgetContext.Provider>
     </>
   )
 }

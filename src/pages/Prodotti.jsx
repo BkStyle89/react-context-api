@@ -1,11 +1,13 @@
 import AppHeader from "../components/AppHeader"
 import AppFooter from "../components/AppFooter"
-import { useEffect,useState } from "react"
+import { useEffect,useState,useContext } from "react"
+import BudgetContext from "./BudgetContext/BudgetContext"
 
 export default function Prodotti(){
 
 const api_link ="https://fakestoreapi.com/products"
 const [products,setProducts]=useState([])
+const {budgetMode,setBudgetMode}=useContext(BudgetContext)
 
 function getProducts(){
 fetch(api_link)
