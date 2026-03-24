@@ -38,16 +38,20 @@ function setFunctionMode(){
 }
 console.log(budgetMode);
 
-function filterPrice(){
+ function filterPrice(){
     
     const filteredPrice=products.filter(item=>item.price)
-    setPrice(filteredPrice)
-    console.log(setPrice);
+    formData(filteredPrice)
+    console.log(formData);
     
-}
+} 
+console.log(filterPrice);
+
 function handleSubmit(e){
     e.preventDefault()
 }
+
+
 
 
 return(
