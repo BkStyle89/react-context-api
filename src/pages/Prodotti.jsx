@@ -18,6 +18,12 @@ fetch(api_link)
 }
 useEffect(getProducts,[]) 
 
+function setFunctionMode(){
+    if (budgetMode== false) setBudgetMode(true)
+        else{
+    setBudgetMode(false)
+        }
+}
 console.log(budgetMode);
 
 
@@ -27,7 +33,7 @@ return(
             <a className="text-decoration-none p-2 text-light bg-primary" href="/">HomePage</a>
             <a className="text-decoration-none p-2 text-light bg-primary " href="ChiSiamo">Chi Siamo</a>
             <a className="text-decoration-none p-2 text-light bg-primary" href="Prodotti">Prodotti</a>
-            <button onClick={()=>setBudgetMode(true)}>BudgetMode</button>
+            <button onClick={setFunctionMode}>BudgetMode</button>
         </header>
         <main>
             <div className="container">
