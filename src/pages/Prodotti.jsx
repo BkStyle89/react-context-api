@@ -1,7 +1,7 @@
 import AppHeader from "../components/AppHeader"
 import AppFooter from "../components/AppFooter"
 import { useEffect,useState,useContext } from "react"
-import BudgetContext from "./BudgetContext/BudgetContext"
+import BudgetContext from "../BudgetContext/BudgetContext"
 
 export default function Prodotti(){
 
@@ -9,7 +9,9 @@ const api_link ="https://fakestoreapi.com/products"
 const [products,setProducts]=useState([])
 const {budgetMode,setBudgetMode}=useContext(BudgetContext)
 const [filter,setFilter]=useState([])
-const [price,setPrice]=useState()
+const [formData,setFormData]=useState(0)
+console.log(formData);
+
 
 
 
@@ -38,12 +40,14 @@ console.log(budgetMode);
 
 function filterPrice(){
     
-    const filteredPrice=products.filter(item=>item.price.toFixed())
+    const filteredPrice=products.filter(item=>item.price)
     setPrice(filteredPrice)
     console.log(setPrice);
     
 }
-
+function handleSubmit(e){
+    e.preventDefault()
+}
 
 
 return(
@@ -52,8 +56,14 @@ return(
             <a className="text-decoration-none p-2 text-light bg-primary" href="/">HomePage</a>
             <a className="text-decoration-none p-2 text-light bg-primary " href="ChiSiamo">Chi Siamo</a>
             <a className="text-decoration-none p-2 text-light bg-primary" href="Prodotti">Prodotti</a>
-            <input type="Number" />
-            <button onClick={filterPrice}>cerca</button>
+            <form onSubmit={handleSubmit}>
+                <input type="Number"
+                name="price"
+                value={formData.Number}
+                onChange={e=> setFormData({...formData,"price":e.target.value})}
+                />
+                <button onClick={filterPrice}>cerca</button>
+            </form>
             { budgetMode == false ?
                 <button className="bg-success" onClick={setFunctionMode}>Attiva Modalità Budget</button>
                 :

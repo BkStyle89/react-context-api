@@ -3,7 +3,7 @@ import Homepage from "./pages/Homepage"
 import ChiSiamo from "./pages/ChiSiamo"
 import Prodotti from "./pages/Prodotti"
 import ProdottoSingolo from "./pages/ProdottoSingolo"
-import BudgetContext from "./pages/BudgetContext/BudgetContext"
+import BudgetContext from "./BudgetContext/BudgetContext"
 import { useEffect,useContext,useState } from "react"
 
 
