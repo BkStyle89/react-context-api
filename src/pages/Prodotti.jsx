@@ -9,6 +9,7 @@ const api_link ="https://fakestoreapi.com/products"
 const [products,setProducts]=useState([])
 const {budgetMode,setBudgetMode}=useContext(BudgetContext)
 const [filter,setFilter]=useState([])
+const [price,setPrice]=useState()
 
 
 
@@ -26,7 +27,7 @@ function setFunctionMode(){
     console.log(budgetMode);
     
     if (budgetMode== false){
-        const filtered=products.filter(item=>item.price<=30)
+        const filtered=products.filter(item=>item.price<=30 )
         setFilter(filtered)
     }
         else{
@@ -35,6 +36,9 @@ function setFunctionMode(){
 }
 console.log(budgetMode);
 
+function filterPrice(){
+    if
+}
 
 
 return(
@@ -43,13 +47,12 @@ return(
             <a className="text-decoration-none p-2 text-light bg-primary" href="/">HomePage</a>
             <a className="text-decoration-none p-2 text-light bg-primary " href="ChiSiamo">Chi Siamo</a>
             <a className="text-decoration-none p-2 text-light bg-primary" href="Prodotti">Prodotti</a>
-            
+            <input type="Number" />
             { budgetMode == false ?
                 <button className="bg-success" onClick={setFunctionMode}>Attiva Modalità Budget</button>
                 :
                 <button className="bg-danger" onClick={setFunctionMode}>Disattiva Modalità Budget</button>
             }
-
         </header>
         <main>
             <div className="container">
