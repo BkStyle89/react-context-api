@@ -3,12 +3,14 @@ import Homepage from "./pages/Homepage"
 import ChiSiamo from "./pages/ChiSiamo"
 import Prodotti from "./pages/Prodotti"
 import ProdottoSingolo from "./pages/ProdottoSingolo"
+import BudgetContext from "./pages/BudgetContext/BudgetContext"
 
 
 function App() {
  
   return (
     <>
+    <BudgetContext>
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Homepage/>}/>
@@ -17,6 +19,7 @@ function App() {
             <Route path="/prodotti/:id" element={<ProdottoSingolo/>}/>
         </Routes>
       </BrowserRouter>
+      </BudgetContext>
     </>
   )
 }
