@@ -18,9 +18,17 @@ fetch(api_link)
 }
 useEffect(getProducts,[]) 
 
+console.log(budgetMode);
+
+
 return(
     <div>
-        <AppHeader/>
+        <header className="headerBar text-center p-3 mb-3 rounded-bottom-5 mb-5">
+            <a className="text-decoration-none p-2 text-light bg-primary" href="/">HomePage</a>
+            <a className="text-decoration-none p-2 text-light bg-primary " href="ChiSiamo">Chi Siamo</a>
+            <a className="text-decoration-none p-2 text-light bg-primary" href="Prodotti">Prodotti</a>
+            <button onClick={()=>setBudgetMode(true)}>BudgetMode</button>
+        </header>
         <main>
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-4">
