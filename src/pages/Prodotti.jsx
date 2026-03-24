@@ -37,8 +37,13 @@ function setFunctionMode(){
 console.log(budgetMode);
 
 function filterPrice(){
-    if
+    
+    const filteredPrice=products.filter(item=>item.price.toFixed())
+    setPrice(filteredPrice)
+    console.log(setPrice);
+    
 }
+
 
 
 return(
@@ -48,6 +53,7 @@ return(
             <a className="text-decoration-none p-2 text-light bg-primary " href="ChiSiamo">Chi Siamo</a>
             <a className="text-decoration-none p-2 text-light bg-primary" href="Prodotti">Prodotti</a>
             <input type="Number" />
+            <button onClick={filterPrice}>cerca</button>
             { budgetMode == false ?
                 <button className="bg-success" onClick={setFunctionMode}>Attiva Modalità Budget</button>
                 :
