@@ -1,6 +1,9 @@
 import { createContext,useEffect } from "react";
 
 const BudgetContext = createContext();
-const [budgetMode,setBudgetMode]=useEffect(false)
 
-export default BudgetContext
+export default function BudgetContext(){
+    
+    const [budgetMode,setBudgetMode]=useEffect(false);
+
+}
