@@ -45,9 +45,9 @@ return(
             <a className="text-decoration-none p-2 text-light bg-primary" href="Prodotti">Prodotti</a>
             
             { budgetMode == false ?
-                <button onClick={setFunctionMode}>Attiva Modalità Budget</button>
+                <button className="bg-success" onClick={setFunctionMode}>Attiva Modalità Budget</button>
                 :
-                <button onClick={setFunctionMode}>Disattiva Modalità Budget</button>
+                <button className="bg-danger" onClick={setFunctionMode}>Disattiva Modalità Budget</button>
             }
 
         </header>
