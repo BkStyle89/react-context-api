@@ -2,7 +2,6 @@ import { useEffect,useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import AppFooter from "../components/AppFooter"
 import axios from "axios"
-import AppHeader from "../components/AppHeader";
 import { Link } from "react-router";
 
 export default function ProdottoSingolo(){
@@ -13,10 +12,15 @@ export default function ProdottoSingolo(){
 
     useEffect(()=>{
         axios.get(`https://fakestoreapi.com/products/${id}`)
-        .then((res)=> setProduct(res.data)
-        )
+        .then((res)=>{
+            if(res.data){
+                setProduct(res.data)
+            }else{
+                navigate("/prodotti")
+            }
+        })
         .catch(err=>{
-            alert("404 FILE NOT FOUND")
+            navigate("/prodotti")
         });
     },[id,navigate]);
 console.log(id);

@@ -1,7 +1,7 @@
 import AppHeader from "../components/AppHeader"
 import AppFooter from "../components/AppFooter"
 import { useEffect,useState,useContext } from "react"
-import BudgetContext from "../BudgetContext/BudgetContext"
+import {BudgetContext} from "../BudgetContext/BudgetContext"
 
 export default function Prodotti(){
 
@@ -39,9 +39,12 @@ function setFunctionMode(){
 console.log(budgetMode);
 
  function filterPrice(){
-    
+    if (maxPrice == 0){
+       setFilter(products) 
+    }else{
     const filteredPrice=products.filter(item=>item.price <= maxPrice)
     setFilter(filteredPrice) 
+    }
     
     
 } 
