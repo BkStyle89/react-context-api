@@ -59,12 +59,12 @@ function handleSubmit(e){
 
 
 return(
-    <div>
+    <div className="pgn">
         <header className="headerBar text-center p-3 mb-3 rounded-bottom-5 mb-5">
             <a className="text-decoration-none p-2 text-light bg-primary" href="/">HomePage</a>
             <a className="text-decoration-none p-2 text-light bg-primary " href="ChiSiamo">Chi Siamo</a>
             <a className="text-decoration-none p-2 text-light bg-primary" href="Prodotti">Prodotti</a>
-            <form onSubmit={handleSubmit}>
+            <form className="mt-4" onSubmit={handleSubmit}>
                 <input type="Number"
                     name="price"
                     value={maxPrice}
@@ -73,18 +73,18 @@ return(
                 <button onClick={filterPrice}>cerca</button>
             </form>
             { budgetMode == false ?
-                <button className="bg-success" onClick={setFunctionMode}>Attiva Modalità Budget</button>
+                <button className="bg-success mt-2" onClick={setFunctionMode}>Attiva Modalità Budget</button>
                 :
-                <button className="bg-danger" onClick={setFunctionMode}>Disattiva Modalità Budget</button>
+                <button className="bg-danger mt-2" onClick={setFunctionMode}>Disattiva Modalità Budget</button>
             }
         </header>
-        <main>
+        <main className="pgn">
             <div className="container">
-                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-4">
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-4 mt-5">
                     {filter.map(product=>(
                         <div key={product.id}>
                             <div className="col justify-content-center d-flex h-100 w-100 align-self-stretch">
-                                <div  className="card p-3 bg-light mb-4">
+                                <div  className="card p-3 bg-light mb-4 mt-3">
                                     <h5 className="card-title text-center bg-light">{product.title}</h5>
                                     <p> </p>
                                     <p className="card-text bg-light" id="descr">{product.description}</p>

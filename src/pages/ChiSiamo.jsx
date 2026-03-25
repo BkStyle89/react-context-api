@@ -3,9 +3,9 @@ import AppFooter from "../components/AppFooter"
 export default function ChiSiamo(){
 
 return(
-    <div>
+    <div className="pgn">
         <AppHeader/>
-        <main>
+        <main className="pgn">
             <p className="text-center fs-1 fw-bold">Negozio di Vestiti</p>
             <div className="container">
                 <div className="row  fs-4 text-center ">

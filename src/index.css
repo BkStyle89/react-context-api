@@ -1,13 +1,19 @@
 @import url('bootstrap');
 
-*{
-    background-color: steelblue;
-}
+
 main{
     min-height: 90vh;
 }
 .card{
     border: solid black 2px;
+    box-shadow: 2px 2px 2px 2px black;
+    
+}
+
+.pgn{
+    background-image: url(./assets/palms-and-waves-on-the-beach-at-sunset-wallpaper-3440x1440_15.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #singleProduct{

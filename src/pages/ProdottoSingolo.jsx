@@ -28,17 +28,17 @@ console.log(id);
 
 
     return (
-        <div>
+        <div className="pgn">
         <header className="headerBar text-center p-3 mb-3 rounded-bottom-5 mb-5">
             <a className="text-decoration-none p-2 text-light bg-primary" href="/">HomePage</a>
             <a className="text-decoration-none p-2 text-light bg-primary " href="/chiSiamo">Chi Siamo</a>
             <a className="text-decoration-none p-2 text-light bg-primary" href="/prodotti">Prodotti</a>        
         </header>
-        <main>
+        <main className="pgn">
             <div  className="container">
                 <div className="row">
-                    <div className="col justify-content-center d-flex h-100 w-100 align-self-stretch">
-                        <div  className="card p-3 bg-light mb-4 h-50 w-50 mb-5">
+                    <div  className="col justify-content-center d-flex h-100 w-100 align-self-stretch ">
+                        <div id="singleCard"  className="card p-3 bg-light mb-4 h-50 w-50 mb-5">
                             <h5 className="card-title text-center bg-light">{product?.title}</h5>
                             <p className="card-text bg-light" id="descr">{product?.description}</p>
                             <p className="card-text bg-light text-center">{product?.category}</p> 
@@ -55,6 +55,7 @@ console.log(id);
                                 }
                                 {Number(id) < 20 &&
                                 <Link className="btn btn-primary"  to={`/prodotti/${Number(id) + 1}`}>Avanti</Link>
+                                
                                 }
                             </div>
                         </div>
