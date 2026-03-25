@@ -4,7 +4,7 @@ import ChiSiamo from "./pages/ChiSiamo"
 import Prodotti from "./pages/Prodotti"
 import ProdottoSingolo from "./pages/ProdottoSingolo"
 import BudgetContext from "./BudgetContext/BudgetContext"
-import { useEffect,useContext,useState } from "react"
+import { useState } from "react"
 
 
 function App() {

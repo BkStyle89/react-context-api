@@ -9,8 +9,8 @@ const api_link ="https://fakestoreapi.com/products"
 const [products,setProducts]=useState([])
 const {budgetMode,setBudgetMode}=useContext(BudgetContext)
 const [filter,setFilter]=useState([])
-const [formData,setFormData]=useState(0)
-console.log(formData);
+const [maxPrice,setMaxPrice]=useState(0)
+
 
 
 
@@ -40,15 +40,16 @@ console.log(budgetMode);
 
  function filterPrice(){
     
-    const filteredPrice=products.filter(item=>item.price)
-    formData(filteredPrice)
-    console.log(formData);
+    const filteredPrice=products.filter(item=>item.price <= maxPrice)
+    setFilter(filteredPrice) 
+    
     
 } 
-console.log(filterPrice);
 
 function handleSubmit(e){
     e.preventDefault()
+    filterPrice()
+    
 }
 
 
@@ -62,10 +63,10 @@ return(
             <a className="text-decoration-none p-2 text-light bg-primary" href="Prodotti">Prodotti</a>
             <form onSubmit={handleSubmit}>
                 <input type="Number"
-                name="price"
-                value={formData.Number}
-                onChange={e=> setFormData({...formData,"price":e.target.value})}
-                />
+                    name="price"
+                    value={maxPrice}
+                    onChange={e=> setMaxPrice(e.target.value)}
+                    />
                 <button onClick={filterPrice}>cerca</button>
             </form>
             { budgetMode == false ?
